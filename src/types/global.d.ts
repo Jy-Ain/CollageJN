@@ -1,18 +1,18 @@
 /// <reference lib="dom" />
 
 interface Window {
-    showDirectoryPicker?: () => Promise<FileSystemDirectoryHandle>;
+  showDirectoryPicker?: () => Promise<FileSystemDirectoryHandle>;
 }
 
 interface FileSystemDirectoryHandle {
-    values: () => AsyncIterableIterator<FileSystemHandle>;
+  values: () => AsyncIterableIterator<FileSystemHandle>;
 }
 
 interface FileSystemFileHandle extends FileSystemHandle {
-    getFile: () => Promise<File>;
+  getFile: () => Promise<File>;
 }
 
 interface FileSystemHandle {
-    kind: "file" | "directory";
-    name: string;
+  kind: 'file' | 'directory';
+  name: string;
 }
